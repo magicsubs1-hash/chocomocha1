@@ -1,0 +1,92 @@
+/* ── Card wrapper ── */
+.wrap {
+  position: relative;
+  flex-shrink: 0;
+  width: 200px;
+  z-index: 1;
+  transition: z-index 0s .3s;
+}
+.wrap:hover { z-index: 30; transition: z-index 0s; }
+
+/* ── Static poster ── */
+.card {
+  display: block;
+  border-radius: 4px;
+  overflow: hidden;
+  aspect-ratio: 2/3;
+  background: var(--bg-card);
+  position: relative;
+}
+.card img { width: 100%; height: 100%; object-fit: cover; }
+
+.imdbBadge {
+  position: absolute; bottom: 6px; left: 6px;
+  display: flex; align-items: center; gap: 3px;
+  background: rgb(0 0 0 / .75); backdrop-filter: blur(4px);
+  color: #f5c518; font-size: .68rem; font-weight: 700;
+  padding: 2px 7px; border-radius: 3px;
+}
+
+/* ── Hover card (Netflix expand) ── */
+.hoverCard {
+  position: absolute;
+  top: -20px; left: 50%;
+  width: 290px;
+  transform: translateX(-50%);
+  background: var(--bg-card);
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 14px 36px rgb(0 0 0 / .75), 0 0 0 1px rgb(255 255 255 / .08);
+  animation: growIn .2s var(--transition) forwards;
+  cursor: default;
+}
+@keyframes growIn {
+  from { opacity: 0; transform: translateX(-50%) scale(.85); }
+  to   { opacity: 1; transform: translateX(-50%) scale(1); }
+}
+
+.hoverImg { display: block; }
+.hoverImg img {
+  width: 100%; aspect-ratio: 16/10; object-fit: cover;
+}
+
+.hoverBody { padding: 12px 14px 14px; }
+
+/* Action buttons row */
+.actions { display: flex; align-items: center; gap: 6px; margin-bottom: 10px; }
+
+.playCircle {
+  width: 34px; height: 34px; border-radius: 50%;
+  background: #fff; display: flex; align-items: center; justify-content: center;
+  transition: background .15s;
+}
+.playCircle:hover { background: #ddd; }
+
+.circleBtn {
+  width: 34px; height: 34px; border-radius: 50%;
+  border: 2px solid #777; display: flex; align-items: center; justify-content: center;
+  color: #fff; transition: border-color .15s;
+}
+.circleBtn:hover { border-color: #fff; }
+
+/* Meta info */
+.meta {
+  display: flex; align-items: center; gap: 6px; flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+.match { color: var(--green); font-size: .78rem; font-weight: 700; }
+.maturity {
+  border: 1px solid #777; padding: 0 4px; font-size: .6rem;
+  border-radius: 2px; line-height: 1.5; color: #bcbcbc;
+}
+.dur { font-size: .72rem; color: var(--text-muted); }
+
+/* Genres */
+.genres { font-size: .7rem; color: var(--text-secondary); }
+.dot { margin: 0 5px; color: #555; }
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+  .wrap { width: calc(33.33vw - 12px); min-width: 95px; }
+  .hoverCard { display: none; }
+}

@@ -1,0 +1,27 @@
+.page { padding: calc(var(--nav-h) + 20px) var(--side-pad) 50px; min-height: 100vh; }
+
+.topBar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 28px; flex-wrap: wrap; gap: 12px; }
+.title { font-size: 2rem; font-weight: 700; }
+.controls { display: flex; gap: 8px; }
+.select {
+  background: #000; border: 1px solid #fff; color: #fff;
+  padding: 6px 30px 6px 12px; font-size: .82rem; cursor: pointer;
+  appearance: none; outline: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l4 4 4-4' stroke='white' fill='none'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 10px center;
+}
+
+.grid { display: flex; flex-wrap: wrap; gap: var(--card-gap); }
+
+.loading { height: 50vh; display: flex; align-items: center; justify-content: center; }
+.spin { width: 44px; height: 44px; border: 3px solid #333; border-top-color: var(--red); border-radius: 50%; animation: sp .7s linear infinite; }
+@keyframes sp { to { transform: rotate(360deg); } }
+.empty { text-align: center; color: var(--text-muted); padding: 100px 0; font-size: 1.1rem; }
+
+@media (max-width: 768px) {
+  .topBar { flex-direction: column; align-items: flex-start; }
+  .title { font-size: 1.3rem; }
+  .controls { width: 100%; }
+  .select { flex: 1; }
+  .grid { gap: 6px; }
+}

@@ -1,0 +1,107 @@
+.page {
+  min-height: 100vh; padding: calc(var(--nav-h) + 40px) var(--side-pad) 50px;
+  display: flex; flex-direction: column; align-items: center;
+}
+.header { text-align: center; margin-bottom: 36px; }
+.header h1 { font-size: 2.2rem; font-weight: 800; margin-bottom: 6px; }
+.header p { color: var(--text-muted); font-size: 1rem; }
+
+.error { background: #e8720315; color: #e87c03; padding: 12px 20px; border-radius: 4px; margin-bottom: 18px; font-size: .85rem; }
+
+/* Plans */
+.plans { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; max-width: 860px; width: 100%; }
+.plan {
+  background: var(--bg-card); border: 2px solid #333; border-radius: 6px;
+  padding: 28px 24px; width: 250px; text-align: center;
+  cursor: pointer; transition: border-color .2s, transform .15s; position: relative;
+}
+.plan:hover { border-color: #555; transform: translateY(-3px); }
+.plan.popular { border-color: var(--red); }
+.popularBadge {
+  position: absolute; top: -11px; left: 50%; transform: translateX(-50%);
+  background: var(--red); color: #fff; font-size: .68rem; font-weight: 700;
+  padding: 3px 14px; border-radius: 20px; letter-spacing: .4px;
+}
+.plan h2 { font-size: 1.2rem; font-weight: 700; margin-bottom: 14px; }
+.price { margin-bottom: 10px; }
+.amount { font-size: 1.8rem; font-weight: 800; }
+.planDesc { color: var(--text-muted); font-size: .8rem; margin-bottom: 18px; }
+.btnSelect {
+  background: var(--red); color: #fff; padding: 11px; border-radius: 4px;
+  font-size: .9rem; font-weight: 700; width: 100%;
+}
+.btnSelect:hover { background: var(--red-hover); }
+.plan.popular .btnSelect { background: #fff; color: #000; }
+.plan.popular .btnSelect:hover { background: #ddd; }
+
+/* Payment */
+.paymentBox {
+  background: var(--bg-card); border: 1px solid #333; border-radius: 6px;
+  padding: 36px; max-width: 400px; width: 100%; text-align: center;
+}
+.paymentBox h2 { font-size: 1.4rem; font-weight: 700; margin-bottom: 6px; }
+.paymentPlan { color: var(--text-muted); font-size: .9rem; margin-bottom: 24px; }
+
+.qrWrap { margin-bottom: 20px; }
+.qr { width: 200px; height: 200px; border-radius: 6px; margin: 0 auto 12px; }
+.qrHint { color: #666; font-size: .8rem; }
+
+/* Bank info */
+.bankInfo {
+  background: rgb(255 255 255 / .04); border: 1px solid #333; border-radius: 6px;
+  padding: 2px 0; margin-bottom: 18px; text-align: left;
+}
+.bankRow {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 9px 14px; border-bottom: 1px solid rgb(255 255 255 / .04); cursor: pointer;
+}
+.bankRow:last-child { border: none; }
+.bankRow:hover { background: rgb(255 255 255 / .02); }
+.bankLabel { font-size: .75rem; color: #666; }
+.bankValue { font-size: .85rem; color: #ddd; font-weight: 500; }
+.bankValueBig { font-size: 1.05rem; color: #fff; font-weight: 700; }
+.bankValueRef { font-size: .85rem; color: var(--red); font-weight: 700; }
+.copy { font-size: .65rem; opacity: .4; margin-left: 3px; }
+
+.notice {
+  display: flex; align-items: center; gap: 6px;
+  background: rgb(96 165 250 / .06); border: 1px solid rgb(96 165 250 / .15);
+  color: #60a5fa; padding: 8px 12px; border-radius: 4px;
+  font-size: .75rem; margin-bottom: 16px;
+}
+.waiting {
+  display: flex; align-items: center; justify-content: center; gap: 6px;
+  color: #666; font-size: .8rem; margin-bottom: 10px;
+}
+.waitDot { width: 7px; height: 7px; border-radius: 50%; background: var(--red); animation: bk 1.2s infinite; }
+@keyframes bk { 50% { opacity: .2; } }
+
+.btnBack { color: #666; font-size: .82rem; margin-top: 8px; }
+.btnBack:hover { color: #fff; }
+
+/* Success */
+.success { text-align: center; padding: 50px 0; }
+.checkIcon {
+  width: 72px; height: 72px; border-radius: 50%;
+  background: rgb(70 211 105 / .12); color: var(--green);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 20px;
+}
+.success h1 { font-size: 1.8rem; margin-bottom: 10px; }
+.subInfo { color: var(--text-muted); font-size: 1rem; margin-bottom: 28px; }
+.subInfo strong { color: var(--green); }
+.btnWatch {
+  background: #fff; color: #000; padding: 12px 32px; border-radius: 4px;
+  font-size: 1rem; font-weight: 700;
+}
+.btnWatch:hover { background: #ddd; }
+
+@media (max-width: 768px) {
+  .header h1 { font-size: 1.5rem; }
+  .plans { flex-direction: column; align-items: center; }
+  .plan { width: 100%; max-width: 320px; }
+  .amount { font-size: 1.5rem; }
+  .paymentBox { padding: 24px 18px; }
+  .qr { width: 160px; height: 160px; }
+  .success h1 { font-size: 1.4rem; }
+}

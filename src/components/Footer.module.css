@@ -1,0 +1,12 @@
+.footer { padding: 50px var(--side-pad) 30px; }
+.inner { max-width: 900px; }
+.links { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 24px; }
+.links a { color: #808080; font-size: .78rem; text-decoration: underline; }
+.links a:hover { color: #b3b3b3; }
+.logo { font-size: .95rem; font-weight: 800; color: #808080; }
+.logo span { color: var(--red); }
+.copy { color: #808080; font-size: .7rem; line-height: 2; }
+
+@media (max-width: 768px) {
+  .footer { padding: 30px var(--side-pad) 24px; }
+}
