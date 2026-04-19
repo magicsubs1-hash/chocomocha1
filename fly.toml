@@ -1,0 +1,26 @@
+app = "chocomocha"
+primary_region = "nrt"
+
+[build]
+
+[env]
+  PORT = "5000"
+  DATA_DIR = "/data"
+  NODE_ENV = "production"
+
+[mounts]
+  source = "dxkino_data"
+  destination = "/data"
+
+[http_service]
+  internal_port = 5000
+  force_https = true
+  auto_stop_machines = "stop"
+  auto_start_machines = true
+  min_machines_running = 1
+  processes = ["app"]
+
+[[vm]]
+  cpu_kind = "shared"
+  cpus = 1
+  memory_mb = 256

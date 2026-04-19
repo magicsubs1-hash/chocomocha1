@@ -1,0 +1,8 @@
+{
+  "appId": "com.dxkino.app",
+  "appName": "DX Kino",
+  "webDir": "dist",
+  "server": {
+    "cleartext": true
+  }
+}

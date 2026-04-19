@@ -1,0 +1,14 @@
+node_modules
+dist
+.git
+.gitignore
+.env
+.env.local
+android
+public/uploads
+server/db.sqlite
+server/db.sqlite-shm
+server/db.sqlite-wal
+*.md
+.vscode
+.idea

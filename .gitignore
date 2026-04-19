@@ -1,0 +1,34 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Database (хэзээ ч push хийхгүй)
+server/db.sqlite
+server/db.sqlite-shm
+server/db.sqlite-wal
+
+# User uploads
+public/uploads/
+
+# Capacitor native build
+android/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Logs
+*.log
+npm-debug.log*
